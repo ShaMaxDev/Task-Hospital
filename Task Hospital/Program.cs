@@ -10,14 +10,15 @@ namespace Task_Hospital
     {
         static void Main(string[] args)
         {
-            int hour = 60;
-            int timePerPerson = 10;
+            int minutesInHour = 60;
+            int minutesPerPerson = 10;
             int receptionLine;
             Console.WriteLine("How many people in reception line?");
             receptionLine = Convert.ToInt32(Console.ReadLine());
-            int waitingHours = (receptionLine * timePerPerson) / hour;
-            int waitingMinutes = (receptionLine * timePerPerson) % hour;
-            Console.WriteLine("You will wait " + waitingHours + " hours and " + waitingMinutes + " minutes");
+            int waitingMinutesInLine = (receptionLine * minutesPerPerson); 
+            int supposedWaitingHours = waitingMinutesInLine / minutesInHour;
+            int supposedWaitingMinutes = waitingMinutesInLine % minutesInHour;
+            Console.WriteLine("You will wait " + supposedWaitingHours + " hours and " + supposedWaitingMinutes + " minutes");
         }
     }
 }
